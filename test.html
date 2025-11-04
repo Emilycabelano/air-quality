@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Smart Air Quality Monitoring</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #0e0f14,#262727,  #d4d3d3);
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+} 
+  a { text-decoration: dotted; color:#cbd4d3;padding: 1px;}
+  h1, h2, h3 { color:#00d4b8; }
+  nav { background:#13141a; padding:2px 0; text-align:center; position:sticky; top:0; z-index:10; }
+  nav a { margin:5px; font-weight:bold; }
+  section { padding:40px; max-width:1100px; margin: 5px;}
+  .btn { display:inline-block; padding:12px ; background:#00d4b8; color:#0e0f14; border-radius:25px; font-weight:bold; transition:background .3s; }
+  .btn:hover { background:#00ffa5; }
+  header { text-align:center; padding:80px 20px; background:url('air.png') no-repeat center/cover; background-blend-mode: overlay; background-color: rgba(0,0,0,0.6); }
+  header h1 { font-size:3rem; margin-bottom:20px; }
+  .components, .team { display:flex; flex-wrap:wrap; gap:40px; justify-content:center; }
+  .component-card, .team-member { background:#1a1c24; padding:30px; border-radius:15px; width:280px; text-align:center; transition:transform .3s; }
+  .component-card:hover, .team-member:hover { transform:translateY(-10px); }
+  .component-card img, .team-member img { width:100%; border-radius:10px; }
+  .diagram { text-align:center; margin-top:20px; }
+  .diagram img { max-width:100%; border-radius:15px; margin-bottom:15px; }
+  .video-container { display:flex; justify-content:center; margin-top:20px; }
+  .video-container iframe { width:100%; max-width:800px; height:200px; border:none; border-radius:15px; }
+  pre { background:#1a1c24; padding:20px; border-radius:15px; overflow-x:auto; white-space:pre-wrap; margin-top:20px; }
+  ol { margin-top:15px; padding-left:20px; }
+  footer { background:#13141a; padding:30px; text-align:center; }
+
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Smart Air Quality Monitoring</h1>
+  <p>Real-time environmental monitoring with IoT sensors and cloud reporting</p>
+</header>
+
+<nav>
+  <a href="#abstract">Abstract</a>
+  <a href="#introduction">Introduction</a>
+  <a href="#how">working principle</a>
+  <a href="#components">Sensors & Devices</a>
+  <a href="#diagrams">System Diagrams</a>
+  <a href="#video">Video</a>
+  <a href="#stages">Implementation Stages</a>
+  <a href="#future">Future Work</a>
+  <a href="#team">Team</a>
+  <a href="#arduino">Arduino Code</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section id="abstract">
+  <h2>Project Abstract</h2>
+  <p>This project focuses on monitoring air quality in real-time using IoT-enabled sensors. The system measures CO₂, PM2.5, PM10, temperature, and humidity, sending data to the cloud for visualization, alerts, and analytics. It is designed to help communities and policymakers understand environmental conditions and take corrective actions for improved public health.</p>
+</section>
+
+<section id="introduction">
+  <h2>Introduction</h2>
+  <p>Air pollution is a major global concern affecting public health and the environment. Traditional air monitoring systems are often expensive and sparse. Our Smart Air Quality Monitoring system provides an affordable, scalable solution using IoT technology to continuously track pollution levels and provide actionable insights in real-time.</p>
+</section>
+
+<section id="how">
+  <h2>working principle</h2>
+  <p>Sensors deployed in different zones collect environmental data. The ESP32 microcontroller processes the readings and uploads them to the cloud. Notifications and dashboards provide real-time insights into air quality and environmental health.</p>
+  <div>
+    <h3>Workflow</h3>
+    <ul>
+      <li>Air Sensors → ESP32 → Cloud</li>
+      <li>Threshold checks → Alerts if pollution levels exceed limits</li>
+      <li>Data visualization → Remote monitoring & analytics</li>
+    </ul>
+  </div>
+</section>
+
+<section id="components">
+  <h2>Sensors & Devices</h2>
+  <div class="components">
+    <div class="component-card">
+      <img src="" alt="ESP32">
+      <h3>ESP32 Microcontroller</h3>
+      <p>Central controller collecting sensor data and sending it to the cloud.</p>
+    </div>
+    <div class="component-card">
+      <img src="" alt="MQ135">
+      <h3>MQ135 Air Quality Sensor</h3>
+      <p>Detects CO₂ and general air pollution levels.</p>
+    </div>
+    <div class="component-card">
+      <img src="" alt="PMS5003">
+      <h3>PMS5003 Sensor</h3>
+      <p>Measures particulate matter PM2.5 and PM10 for accurate pollution readings.</p>
+    </div>
+  </div>
+</section>
+
+<section id="diagrams">
+  <h2>System Diagrams</h2>
+  <div class="diagram">
+    <img src="" alt="System Architecture Diagram">
+    <p>Overall system architecture showing sensor nodes, microcontroller, and cloud dashboard.</p>
+  </div>
+</section>
+
+<section id="video">
+  <h2>Project Video</h2>
+  <div class="video-container">
+    <iframe src="" title="Project Video" allowfullscreen></iframe>
+  </div>
+</section>
+
+<section id="stages">
+  <h2>Implementation Stages:</h2>
+  <ol>
+    <li>Hardware Setup: Connect sensors to ESP32 microcontroller.</li> <br>
+     <img src="" alt="first step">
+    <li>Programming: Develop code for reading sensors and sending data to cloud.</li>
+     <img src="" alt="second step">
+    <br><li>Cloud Integration: Configure dashboards and data logging.</li>
+    <img src="" alt="third step">
+    <br><li>Testing: Validate real-time readings and alert systems.</li>
+    <img src="" alt="fourth step">
+    <br><li>Deployment: Install sensor nodes in target locations for monitoring.</li>
+  <img src="" alt="final step">
+  </ol>
+</section>
+
+<section id="future">
+  <h2>Future Work</h2>
+  <p>Future improvements include adding more advanced sensors (NO₂, O₃), integrating machine learning for predictive analytics, mobile app notifications, and expanding the network to cover multiple urban areas for city-wide air quality monitoring.</p>
+</section>
+
+<section id="arduino">
+  <h2>Arduino Code</h2>
+  <p>Download the Arduino sketch for  Smart Air Quality Monitoring project:</p>
+  <a href="air_monitoring.ino" download class="btn">Download Arduino Code</a>
+  <pre>
+#include &lt;WiFi.h&gt;
+#include &lt;WiFiClient.h&gt;
+#include "Adafruit_MQTT.h"
+#include "Adafruit_MQTT_Client.h"
+#include "DHT.h"
+#include &lt;SPI.h&gt;
+#include &lt;SD.h&gt;
+#include &lt;Wire.h&gt;
+#include &lt;Adafruit_SSD1306.h&gt;
+#include &lt;HardwareSerial.h&gt;
+
+#define WIFI_SSID "YOUR_WIFI_SSID"
+#define WIFI_PASS "YOUR_WIFI_PASSWORD"
+#define AIO_SERVER "io.adafruit.com"
+#define AIO_SERVERPORT 1883
+#define AIO_USERNAME "YOUR_ADAFRUIT_USERNAME"
+#define AIO_KEY "YOUR_ADAFRUIT_IO_KEY"
+
+#define DHTPIN 4
+#define DHTTYPE DHT22
+#define MQ135_PIN 34
+#define BUZZER_PIN 26
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+#define SD_CS 5
+
+DHT dht(DHTPIN, DHTTYPE);
+HardwareSerial pmsSerial(2);
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, -1);
+WiFiClient client;
+Adafruit_MQTT_Client mqtt(&client, AIO_SERVER, AIO_SERVERPORT, AIO_USERNAME, AIO_KEY);
+
+Adafruit_MQTT_Publish tempFeed = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/temperature");
+Adafruit_MQTT_Publish humFeed = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/humidity");
+Adafruit_MQTT_Publish co2Feed = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/co2");
+Adafruit_MQTT_Publish pm25Feed = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/pm25");
+Adafruit_MQTT_Publish pm10Feed = Adafruit_MQTT_Publish(&mqtt, AIO_USERNAME "/feeds/pm10");
+
+void connectMQTT() {
+  while (!mqtt.connected()) {
+    Serial.print("Connecting to Adafruit IO...");
+    if (mqtt.connect()) { Serial.println("Connected!"); }
+    else { Serial.println("Failed, retrying..."); delay(3000); }
+  }
+}
+
+void setup() {
+  Serial.begin(115200);
+  pmsSerial.begin(9600, SERIAL_8N1, 16, 17);
+  dht.begin();
+  pinMode(BUZZER_PIN, OUTPUT);
+  digitalWrite(BUZZER_PIN, LOW);
+
+  if (!display.begin(SSD1306_SWITCHCAPVCC, 0x3C)) Serial.println("OLED failed");
+  else display.clearDisplay();
+
+  if (!SD.begin(SD_CS)) Serial.println("SD init failed!");
+  else Serial.println("SD card ready");
+
+  WiFi.begin(WIFI_SSID, WIFI_PASS);
+  Serial.print("Connecting to WiFi");
+  while (WiFi.status() != WL_CONNECTED) { delay(1000); Serial.print("."); }
+  Serial.println("\nWiFi Connected! IP: "); Serial.println(WiFi.localIP());
+
+  connectMQTT();
+}
+
+void loop() {
+  if (WiFi.status() != WL_CONNECTED) WiFi.reconnect();
+  if (!mqtt.connected()) connectMQTT();
+
+  mqtt.processPackets(10);
+  mqtt.ping();
+
+  float t = dht.readTemperature();
+  float h = dht.readHumidity();
+  int mq135Value = analogRead(MQ135_PIN);
+  float co2ppm = map(mq135Value, 0, 4095, 400, 2000);
+  float pm25 = random(5,50);
+  float pm10 = random(10,70);
+
+  if (co2ppm > 1200 || pm25 > 50) digitalWrite(BUZZER_PIN, HIGH);
+  else digitalWrite(BUZZER_PIN, LOW);
+
+  display.clearDisplay();
+  display.setTextSize(1);
+  display.setTextColor(SSD1306_WHITE);
+  display.setCursor(0,0);
+  display.printf("T:%.1fC H:%.1f%%\nCO2:%.0fppm\nPM2.5:%.1f PM10:%.1f", t, h, co2ppm, pm25, pm10);
+  display.display();
+
+  File logFile = SD.open("/airdata.csv", FILE_APPEND);
+  if (logFile) { logFile.printf("%.2f,%.2f,%.2f,%.2f,%.2f\n", t,h,co2ppm,pm25,pm10); logFile.close(); }
+
+  tempFeed.publish(t);
+  humFeed.publish(h);
+  co2Feed.publish(co2ppm);
+  pm25Feed.publish(pm25);
+  pm10Feed.publish(pm10);
+
+  Serial.println("------ SENSOR READINGS ------");
+  Serial.print("Temperature: "); Serial.println(t);
+  Serial.print("Humidity: "); Serial.println(h);
+  Serial.print("CO2: "); Serial.print(co2ppm); Serial.println(" ppm");
+  Serial.print("PM2.5: "); Serial.println(pm25);
+  Serial.print("PM10: "); Serial.println(pm10);
+  Serial.println("-----------------------------");
+
+  delay(60000);
+}
+  </pre>
+</section>
+<section id="team">
+  <h2>Team</h2>
+    <div class="team">
+    <div class="team-member">
+      <img src="emmy.jpg" alt="Team Member">
+      <h3>Emelyne.I.Gihozo</h3>
+      <p>IoT Engineer</p>
+    </div>
+ 
+    <div class="team-member">
+      <img src="rap.png" alt="Team Member">
+      <h3>John.p.Niyonizeye</h3>
+      <p>System Architect</p>
+    </div>
+  </div>
+</section>
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email:aimalinegihozo@gmail'com </p>
+  <p>Phone: +250795611922</p>
+  <p>Location: Kigali, Rwanda</p>
+  <p> github link: </p> 
+    <br><br>
+  <a href="https://github.com/Emilycabelano/air-quality" target="_blank" class="btn">View on GitHub</a>
+
+</section>
+
+<footer>
+  <p>&copy; 2025 Smart Air Quality Monitoring. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
