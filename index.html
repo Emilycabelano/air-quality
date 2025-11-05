@@ -79,7 +79,7 @@
   <h2>Sensors & Devices</h2>
   <div class="components">
     <div class="component-card">
-      <img src="" alt="ESP32">
+      <img src="esp.png" alt="ESP32">
       <h3>ESP32 Gateway</h3>
       <p>Central hub collecting data from all Arduino nodes and uploading it to the cloud dashboard.</p>
     </div>
@@ -125,10 +125,15 @@
   <h2>Implementation Stages:</h2>
   <ol>
     <li>Hardware Setup: Connect MQ135, DHT22, LEDs, and buzzer to each Arduino Nano node.</li>
+    <img src="" alt="first step">
     <li>Node Programming: Write Arduino code to read sensors, compare thresholds, control LEDs/buzzer, and send data via I2C.</li>
+   <img src="" alt="second step">
     <li>ESP32 Programming: Write code to read data from nodes, upload to Adafruit IO, and manage cloud dashboards.</li>
+   <img src="" alt="third step">
     <li>Testing: Verify sensor readings, alerts, I2C communication, and cloud data visualization.</li>
+    <img src="" alt="fourth step">
     <li>Deployment: Install nodes in target locations for continuous environmental monitoring.</li>
+  <img src="" alt="final step">
   </ol>
 </section>
 
@@ -138,7 +143,10 @@
 </section>
 
 <section id="arduino">
-  <h2>Node & ESP32 Code</h2>
+    <h2>Arduino Code</h2>
+  <p>Download the Arduino sketch for  Smart Air Quality Monitoring project:</p>
+    <a href="air_monitoring.ino" download class="btn">Download Arduino Code</a>
+  <h2>.Node & ESP32 Code</h2>
 
   <h3>Arduino Node Code (Node1 & Node2)</h3>
   <pre>
