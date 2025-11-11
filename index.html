@@ -45,38 +45,64 @@
   <a href="#how">Working Principle</a>
   <a href="#components">Sensors & Devices</a>
   <a href="#diagrams">System Diagrams</a>
-  <a href="#video">Video</a>
+  <a href="#videos">Video</a>
   <a href="#stages">Implementation Stages</a>
   <a href="#future">Future Work</a>
   <a href="#team">Team</a>
-  <a href="#arduino">Node & ESP32 Code</a>
   <a href="#contact">Contact</a>
 </nav>
 
-<section id="abstract">
-  <h2>Project Abstract</h2>
-  <p>This project implements a smart air quality monitoring system using two Arduino Nano nodes and an ESP32 gateway. Each node measures CO₂, PM2.5, temperature, and humidity, and sends the data to the ESP32 via I2C. The ESP32 collects data from all nodes, uploads it to Adafruit IO for visualization, and controls alerts independently based on threshold values for each sensor.</p>
-</section>
 
 <section id="introduction">
   <h2>Introduction</h2>
-  <p>Urban air pollution is a growing concern for public health. Monitoring air quality in real-time allows communities and authorities to take timely action. Traditional monitoring systems are often costly and limited in coverage. This system uses multiple low-cost Arduino nodes, each with environmental sensors, communicating with a central ESP32 gateway to collect and send data to the cloud, enabling real-time alerts and dashboards for effective monitoring.</p>
+  The Smart Air Quality Monitoring and Alert System is designed to help people easily track the cleanliness and safety of the air in their surroundings. 
+It uses sensor units placed in different areas to measure air pollution, temperature, and humidity.
+The collected data is sent to a main device, which uploads it to an online platform for real-time viewing.
+Whenever the air becomes unsafe .for instance, when pollution or temperature levels rise above normal , the system instantly sends an alert to warn users.
+ This allows quick action to protect health and improve living conditions.
+By providing accurate and timely information, this project encourages environmental awareness and supports healthier communities in homes, schools, and workplaces.</p>
+</p>
+</section>
+
+<section id="abstract">
+  <h2>Project Abstract</h2>
+  <p>This project introduces a Smart Air Quality Monitoring and Alert System that tracks air pollution, temperature, and humidity to ensure a healthy environment.
+     The system collects data through sensor units and sends it to an online platform for real-time viewing. 
+     When unsafe air conditions are detected, it immediately alerts users to take quick action. By combining technology with environmental awareness,
+     this project provides a simple and effective way to monitor air quality in homes, schools, and workplaces.</p>
 </section>
 
 <section id="how">
   <h2>Working Principle</h2>
-  <p>The system consists of two sensor nodes and an ESP32 gateway:</p>
-  <ol>
-    <li>Each Arduino Nano node reads environmental parameters: CO₂ (MQ135), PM2.5 (simulated), Temperature & Humidity (DHT22).</li>
-    <li>Each node checks if sensor readings exceed predefined thresholds. Alerts are indicated via LEDs and a buzzer if any threshold is exceeded.</li>
-    <li>Data from nodes is sent to the ESP32 gateway via I2C communication.</li>
-    <li>The ESP32 aggregates data from all nodes, sends it to Adafruit IO for cloud visualization, and independently manages alerts for each node.</li>
-    <li>Cloud dashboards display real-time sensor data and trends, allowing remote monitoring and analysis.</li>
-  </ol>
+  <section id="diagrams">
+  <h3>System Diagrams:</h3>
+  <div class="diagram">
+    <img src="BLOCK.png" alt="System Architecture Diagram">
+    <p>Diagram showing two Arduino Nano nodes sending data to ESP32 gateway, which uploads to cloud dashboards.</p>
+  </div>
+   <div class="diagram">
+    <img src="" alt="System circuit schematic Diagram">
+    <p>.</p>
+  </div>
+</section>
+  <h3>Working principle descrption:</h3>
+  <p>The Smart Air Quality Monitoring and Alert System operates through a network of sensor nodes, a central control unit, and an online monitoring platform.
+
+Each sensor node continuously measures key environmental parameters such as carbon dioxide (CO₂), particulate matter (PM2.5), temperature, and humidity. These nodes use compact microcontrollers to process the data locally before transmitting it to the main control unit via UART serial communication.
+
+The central control unit, powered by an ESP32, receives the data from all sensor nodes, analyzes it, and connects to the internet using built-in Wi-Fi. It then uploads the readings to the Adafruit IO cloud dashboard, where users can view real-time trends and insights through dynamic charts and indicators.
+
+Whenever the system detects unsafe air conditions or abnormal environmental changes, it instantly triggers visual or audible alerts and sends notifications through the dashboard. This ensures users are informed immediately and can take action to protect their health and surroundings.
+
+Overall, the system provides a smart, connected, and reliable solution for monitoring air quality in homes, schools, and workplaces while promoting awareness and environmental safety through modern IoT technology.</p>
+  
 </section>
 
 <section id="components">
-  <h2>Sensors & Devices</h2>
+  <h2>Development components:</h2>
+  <p>The following section provides a detailed list and description of all the components used in the development of this project. 
+    Each component has been carefully selected for its specific role and functionality within the system, ensuring smooth operation and accurate performance. Alongside the list, a brief description explains the purpose and working principle of each component,
+     making it easier to understand how they collectively contribute to the project’s overall design and functionality.</p>
   <div class="components">
     <div class="component-card">
       <img src="esp.png" alt="ESP32">
@@ -106,19 +132,31 @@
   </div>
 </section>
 
-<section id="diagrams">
-  <h2>System Diagrams</h2>
-  <div class="diagram">
-    <img src="" alt="System Architecture Diagram">
-    <p>Diagram showing two Arduino Nano nodes sending data to ESP32 gateway, which uploads to cloud dashboards.</p>
+
+
+<section id="videos">
+   <h2>Project Implementation Videos</h2>
+  <P>This section showcases a collection of videos illustrating the project across its different stages of implementation.
+     Each video captures a specific phase, from initial assembly and setup to final operation, highlighting the interaction and functionality of each component. By presenting the development process visually,
+     these videos offer viewers a comprehensive and engaging understanding of how the system works in practice.</P>
+
+  <div class="videos-container">
+    <video width="320" height="240" controls>
+      <source src="video1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video width="320" height="240" controls>
+      <source src="video3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+    <video width="320" height="240" controls>
+      <source src="video4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
   </div>
 </section>
 
-<section id="video">
-  <h2>Project Video</h2>
-  <div class="video-container">
-    <iframe src="" title="Project Video" allowfullscreen></iframe>
-  </div>
 </section>
 
 <section id="stages">
@@ -127,7 +165,11 @@
     <li>Hardware Setup: Connect MQ135, DHT22, LEDs, and buzzer to each Arduino Nano node.</li>
     <img src="" alt="first step">
     <li>Node Programming: Writing Arduino code to read sensors, compare thresholds, control LEDs/buzzer, and send data via I2C.</li>
-    <h3>node c  Code</h3>
+    <h3>nodes firmware</h3>
+    <p>The following are the codes we wrote for each node, 
+      with each node representing a site within the system.
+       These codes enable the nodes to operate independently, collect and process data,
+       and communicate seamlessly with the central controller.</p>
  
   <pre>
 #include <SoftwareSerial.h>
@@ -155,12 +197,11 @@ void loop() {
   delay(3000);
 }
   </pre>
-</section>
-  </pre>
-</section>
+
+
     <li>ESP32 Programming: Writing code to read data from nodes, upload to Adafruit IO, and manage cloud dashboards.</li>
   
-  <h3>esp32gate way code:</h3> 
+  <h3>Microcontrollers firm ware:</h3> 
   <pre> #include <WiFi.h>
 #include <WiFiClient.h>
 #include "Adafruit_MQTT.h"
@@ -251,10 +292,10 @@ void MQTT_connect() {
   Serial.println("MQTT Connected!");
 }
 </pre>
-    <li>Testing: Verify sensor readings, alerts, I2C communication, and cloud data visualization.</li>
-    <img src="" alt="fourth step">
+    <li>Testing: Verify sensor readings, alerts, UART serial communication, and cloud data visualization.</li>
+    <img src="test.png" alt="Fourth step" style="width: 25cm;">
     <li>Deployment: Install nodes in target locations for continuous environmental monitoring.</li>
-  <img src="" alt="final step">
+  <img src="" alt="Final step">
   </ol>
 </section>
 
