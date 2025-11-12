@@ -40,11 +40,11 @@
 </header>
 
 <nav>
-  <a href="#abstract">Abstract</a>
+  
   <a href="#introduction">Introduction</a>
+  <a href="#abstract">Abstract</a>
   <a href="#how">Working Principle</a>
   <a href="#components">Sensors & Devices</a>
-  <a href="#diagrams">System Diagrams</a>
   <a href="#videos">Video</a>
   <a href="#stages">Implementation Stages</a>
   <a href="#future">Future Work</a>
@@ -74,18 +74,7 @@ By providing accurate and timely information, this project encourages environmen
 
 <section id="how">
   <h2>Working Principle</h2>
-  <section id="diagrams">
-  <h3>System Diagrams:</h3>
-  <div class="diagram">
-    <img src="BLOCK.png" alt="System Architecture Diagram">
-    <p>Diagram showing two Arduino Nano nodes sending data to ESP32 gateway, which uploads to cloud dashboards.</p>
-  </div>
-   <div class="diagram">
-    <img src="" alt="System circuit schematic Diagram">
-    <p>.</p>
-  </div>
-</section>
-  <h3>Working principle descrption:</h3>
+  <h3>.Working principle descrption:</h3>
   <p>The Smart Air Quality Monitoring and Alert System operates through a network of sensor nodes, a central control unit, and an online monitoring platform.
 
 Each sensor node continuously measures key environmental parameters such as carbon dioxide (CO₂), particulate matter (PM2.5), temperature, and humidity. These nodes use compact microcontrollers to process the data locally before transmitting it to the main control unit via UART serial communication.
@@ -96,23 +85,40 @@ Whenever the system detects unsafe air conditions or abnormal environmental chan
 
 Overall, the system provides a smart, connected, and reliable solution for monitoring air quality in homes, schools, and workplaces while promoting awareness and environmental safety through modern IoT technology.</p>
   
+
+  <h3>.System Diagrams:</h3>
+  <div class="diagram">
+    <p>To provide a clear understanding of the project’s working principle, 
+      we used Canva to create a block diagram. Using its simple drag-and-drop interface, each component and its interactions were represented in an organized way. 
+      This diagram complements the written explanation by offering a concise and professional visual overview, allowing viewers to quickly grasp how the nodes, sensors, and central controller work together. </p>
+    <img src="BLOCK.png" alt="System block Diagram">
+    <p>Block diagram above shows a work flow of system</p>
+  </div>
+   <div class="diagram">
+    <p> We used proteus to draw the schematic circuit diagram and exported as a PDF,
+       clearly shows the system’s connections and complements the project’s written and visual explanations.</p>
+    <embed src="air momitor.PDF" type="application/pdf" width="100%" height="600px" />
+
+    <p>Schematic circuit diagram above shows visual connection of system's components</p>
+  </div>
+</section>
 </section>
 
 <section id="components">
   <h2>Development components:</h2>
-  <p>The following section provides a detailed list and description of all the components used in the development of this project. 
-    Each component has been carefully selected for its specific role and functionality within the system, ensuring smooth operation and accurate performance. Alongside the list, a brief description explains the purpose and working principle of each component,
+  <p>In this section  we added actual image of the components used i schematatic circuit 
+    Each component has been  selected for its specific role and functionality within the system, ensuring smooth operation and accurate performance. Alongside the list, a brief description explains the purpose and working principle of each component,
      making it easier to understand how they collectively contribute to the project’s overall design and functionality.</p>
   <div class="components">
     <div class="component-card">
-      <img src="esp.png" alt="ESP32">
-      <h3>ESP32 Gateway</h3>
+      <img src="esp.png" alt="ESP32 DEVKITV1">
+      <h3>ESP32  </h3>
       <p>Central hub collecting data from all Arduino nodes and uploading it to the cloud dashboard.</p>
     </div>
     <div class="component-card">
       <img src="ard.png" alt="Arduino Nano">
-      <h3>Arduino Nano Node</h3>
-      <p>Each node reads CO₂, PM2.5, temperature, and humidity, and handles local alerts.</p>
+      <h3>Arduino Nano </h3>
+      <p>Each node controling device which  reads CO₂, PM2.5, temperature, and humidity, and handles local alerts.</p>
     </div>
     <div class="component-card">
       <img src="mq135.png" alt="MQ135">
@@ -165,7 +171,7 @@ Overall, the system provides a smart, connected, and reliable solution for monit
     <li>Hardware Setup: Connect MQ135, DHT22, LEDs, and buzzer to each Arduino Nano node.</li>
     <img src="" alt="first step">
     <li>Node Programming: Writing Arduino code to read sensors, compare thresholds, control LEDs/buzzer, and send data via I2C.</li>
-    <h3>nodes firmware</h3>
+    <h3>Nodes firmware:</h3>
     <p>The following are the codes we wrote for each node, 
       with each node representing a site within the system.
        These codes enable the nodes to operate independently, collect and process data,
@@ -201,7 +207,8 @@ void loop() {
 
     <li>ESP32 Programming: Writing code to read data from nodes, upload to Adafruit IO, and manage cloud dashboards.</li>
   
-  <h3>Microcontrollers firm ware:</h3> 
+  <h3>Gateway firm ware:</h3> 
+  <p>The following are complete code which enable esp32 to receive data from each node and send it to dash board</p>
   <pre> #include <WiFi.h>
 #include <WiFiClient.h>
 #include "Adafruit_MQTT.h"
@@ -293,7 +300,17 @@ void MQTT_connect() {
 }
 </pre>
     <li>Testing: Verify sensor readings, alerts, UART serial communication, and cloud data visualization.</li>
-    <img src="test.png" alt="Fourth step" style="width: 25cm;">
+    
+    <p>To verify sennsor reading we have used arduino ide serial monitor .the following screen shows the serial monitor readings foe each verification stage.
+    </p>
+<p>this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+    <img src="test.png" alt="" style="width: 25cm;">
+    <p>this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+    <img src="test.png" alt="" style="width: 25cm;">
+    <p>this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+    <img src="test.png" alt="" style="width: 25cm;"><p>this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+    <img src="test.png" alt="" style="width: 25cm;">
+
     <li>Deployment: Install nodes in target locations for continuous environmental monitoring.</li>
   <img src="" alt="Final step">
   </ol>
