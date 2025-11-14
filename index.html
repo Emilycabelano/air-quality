@@ -91,13 +91,13 @@ Overall, the system provides a smart, connected, and reliable solution for monit
     <p>To provide a clear understanding of the project’s working principle, 
       we used Canva to create a block diagram. Using its simple drag-and-drop interface, each component and its interactions were represented in an organized way. 
       This diagram complements the written explanation by offering a concise and professional visual overview, allowing viewers to quickly grasp how the nodes, sensors, and central controller work together. </p>
-    <img src="BLOCK.png" alt="System block Diagram">
+    <img src="BLOCK.png" alt="System block Diagram" style="width: 19cm;">
     <p>Block diagram above shows a work flow of system</p>
   </div>
    <div class="diagram">
     <p> We used proteus to draw the schematic circuit diagram and exported as a PDF,
        clearly shows the system’s connections and complements the project’s written and visual explanations.</p>
-    <embed src="air momitor.PDF" type="application/pdf" width="100%" height="600px" />
+    <embed src="air momitor.PDF" type="application/pdf" width="80%" height="600px" />
 
     <p>Schematic circuit diagram above shows visual connection of system's components</p>
   </div>
@@ -139,38 +139,22 @@ Overall, the system provides a smart, connected, and reliable solution for monit
 </section>
 
 
-
-<section id="videos">
-   <h2>Project Implementation Videos</h2>
-  <P>This section showcases a collection of videos illustrating the project across its different stages of implementation.
-     Each video captures a specific phase, from initial assembly and setup to final operation, highlighting the interaction and functionality of each component. By presenting the development process visually,
-     these videos offer viewers a comprehensive and engaging understanding of how the system works in practice.</P>
-
-  <div class="videos-container">
-    <video width="320" height="240" controls>
-      <source src="video1.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    <video width="320" height="240" controls>
-      <source src="video3.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-    
-    <video width="320" height="240" controls>
-      <source src="video4.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-</section>
-
-</section>
-
+  
 <section id="stages">
   <h2>Implementation Stages:</h2>
   <ol>
     <li>Hardware Setup: Connect MQ135, DHT22, LEDs, and buzzer to each Arduino Nano node.</li>
-    <img src="" alt="first step">
-    <li>Node Programming: Writing Arduino code to read sensors, compare thresholds, control LEDs/buzzer, and send data via I2C.</li>
+    <p>here's images that shows how hardware components were connected to provide a functional system</p>
+   
+   <br>
+   <p>full one node  system view</p>
+   
+   <img src="full.JPG" alt="node system connection" style="width: 19cm;">
+   <p>By using soldering techinics we solder node system on compaact bord to ensure system realiability</p>
+    <br><img src="node.JPG" alt="board connection view" style="width: 19cm;">
+    <p>Node system connection with gate way system requires carefull inspection of serial connection between receive and tansmitter of both system  </p>
+   <br><img src="both.jpeg" alt="Both system connection"style="width: 19cm;">
+    <li>Node Programming: Writing Arduino code to read sensors, compare thresholds, control LEDs/buzzer, and send data via UART.</li>
     <h3>Nodes firmware:</h3>
     <p>The following are the codes we wrote for each node, 
       with each node representing a site within the system.
@@ -300,15 +284,16 @@ void MQTT_connect() {
 }
 </pre>
     <li>Testing: Verify sensor readings, alerts, UART serial communication, and cloud data visualization.</li>
-    
-    <p>To verify sennsor reading we have used arduino ide serial monitor .the following screen shows the serial monitor readings foe each verification stage.
-    </p>
-<p>this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+    <br>
+    <p> ...To verify sensor reading we have used arduino ide serial monitor .the following screen shows the serial monitor readings foe each verification stage.
+    </p> <br>
+<p>i.this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+     <br><img src="test.png" alt="" style="width: 25cm;">
+    <p>ii.</p>
     <img src="test.png" alt="" style="width: 25cm;">
-    <p>this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+    <p>iii.</p>
     <img src="test.png" alt="" style="width: 25cm;">
-    <p>this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
-    <img src="test.png" alt="" style="width: 25cm;"><p>this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+    <p>iv.this image shows  ,  </p>
     <img src="test.png" alt="" style="width: 25cm;">
 
     <li>Deployment: Install nodes in target locations for continuous environmental monitoring.</li>
@@ -321,9 +306,35 @@ void MQTT_connect() {
   <p>Future improvements include adding more sensors (NO₂, O₃), implementing predictive analytics using machine learning, mobile notifications, and scaling the network to monitor multiple zones in a city for comprehensive environmental analysis.</p>
 </section>
 
+<section id="videos">
+ <h2>Project Implementation Videos</h2>
+  <P>This section showcases a collection of videos illustrating the project across its different stages of implementation.
+     Each video captures a specific phase, from initial assembly and setup to final operation, highlighting the interaction and functionality of each component. By presenting the development process visually,
+     these videos offer viewers a comprehensive and engaging understanding of how the system works in practice.</P>
+
+  <div class="videos-container">
+    <video width="320" height="240" controls>
+      <source src="video1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <video width="320" height="240" controls>
+      <source src="video3.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    
+    <video width="320" height="240" controls>
+      <source src="video4.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+</section>
+
+
+
 
 <section id="team">
   <h2>Team</h2>
+  <p>We developed this project with the support of Vanguard techlogy </p>
   <div class="team">
     <div class="team-member">
       <img src="emmy.jpg" alt="Team Member">
