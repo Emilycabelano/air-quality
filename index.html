@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart Air Quality Monitoring</title>
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  * { margin: 3px;; padding: 2px; box-sizing:border-box; }
+  body { font-family:'Montserrat', 'Roboto', sans-serif;
+
   background: linear-gradient(to right, #0e0f14,#262727,  #d4d3d3);
   color: #fff;
 } 
@@ -284,8 +285,8 @@ void MQTT_connect() {
 }
 </pre>
     <li>Testing: Verify sensor readings, alerts, UART serial communication, and cloud data visualization.</li>
-    <br>
-    <p> ...To verify sensor reading we have used arduino ide serial monitor .the following screen shows the serial monitor readings foe each verification stage.
+
+    <p> ..To verify sensor reading we have used arduino IDE serial monitor .the following screen shows the serial monitor readings for each verification stage.
     </p> <br>
 <p>i.this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
      <br><img src="test.png" alt="" style="width: 25cm;">
@@ -297,13 +298,22 @@ void MQTT_connect() {
     <img src="test.png" alt="" style="width: 25cm;">
 
     <li>Deployment: Install nodes in target locations for continuous environmental monitoring.</li>
-  <img src="" alt="Final step">
-  </ol>
+ <P>
+  During deployment phase we started by planning and sketching the enclosures for both parts of the system to ensure proper protection and stability.
+   This  step helped us determine how each component would be safely housed, supported, and organized within the structure.
+ <br>
+ here's diagrams that shows both system’s enclosure sketch:
+  </P>
+    <img src="nod.jpg" alt="Nodes system enclosure sketch" style="width:19cm ;">
+    <p style="text-align: center;">Nodes system enclosure sketch</p>
+     <img src="gt.jpg" alt="Gateway system enclosure sketch" style="width:19cm ;" >
+  <p style="text-align: center;">Gateway system enclosure sketch</p>
+    </ol>
 </section>
 
 <section id="future">
-  <h2>Future Work</h2>
-  <p>Future improvements include adding more sensors (NO₂, O₃), implementing predictive analytics using machine learning, mobile notifications, and scaling the network to monitor multiple zones in a city for comprehensive environmental analysis.</p>
+  <h2>Future improvements</h2>
+  <p>Future improvements include adding more sensors, replacing  sensors with more accurate ones ,implementing predictive analytics using machine learning, mobile notifications, and scaling the network to monitor multiple zones for comprehensive environmental analysis.</p>
 </section>
 
 <section id="videos">
@@ -334,8 +344,15 @@ void MQTT_connect() {
 
 <section id="team">
   <h2>Team</h2>
-  <p>We developed this project with the support of Vanguard techlogy </p>
-  <div class="team">
+  <p>This project was developed with the support of Vanguard Technology Lab group,
+     which provided the essential resources needed throughout the entire process. 
+     The lab offered access to equipment, tools, and guidance that made it possible to design, test, and refine each part of the system effectively. 
+    Their support played a key role in ensuring the project was completed successfully and met the required standards of functionality and quality. </p>
+ <P>
+  <a href="https://vtlabsgroup.com/" target="_blank" class="btn">Visit VTlabs group</a>
+    </P>
+    <h2 style="text-align: center;">Our team</h2> 
+    <div class="team">
     <div class="team-member">
       <img src="emmy.jpg" alt="Team Member">
       <h3>Emelyne.I.Gihozo</h3>
@@ -355,8 +372,7 @@ void MQTT_connect() {
   <p>Email: aimalinegihozo@gmail.com</p>
   <p>Phone: +250795611922</p>
   <p>Location: Kigali, Rwanda</p>
-  <p>GitHub link:</p> 
-  <br><br>
+  <br>
   <a href="https://github.com/Emilycabelano/air-quality" target="_blank" class="btn">View on GitHub</a>
 </section>
 
