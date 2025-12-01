@@ -5,21 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Smart Air Quality Monitoring</title>
 <style>
-  * { margin: 3px;; padding: 2px; box-sizing:border-box; }
+  * { margin: 5px; padding:1px; box-sizing:border-box; }
   body { font-family:'Montserrat', 'Roboto', sans-serif;
 
   background: linear-gradient(to right, #0e0f14,#262727,  #d4d3d3);
-  color: #fff;
+  color: #fff;padding: 10px;
 } 
   a { text-decoration: dotted; color:#cbd4d3;padding: 1px;}
   h1, h2, h3 { color:#00d4b8; }
   nav { background:#13141a; padding:2px 0; text-align:center; position:sticky; top:0; z-index:10; }
   nav a { margin:5px; font-weight:bold; }
-  section { padding:40px; max-width:1100px; margin: 5px;}
-  .btn { display:inline-block; padding:12px ; background:#00d4b8; color:#0e0f14; border-radius:25px; font-weight:bold; transition:background .3s; }
-  .btn:hover { background:#00ffa5; }
-  header { text-align:center; padding:80px 20px; background:url('air.png') no-repeat center/cover; background-blend-mode: overlay; background-color: rgba(0,0,0,0.6); }
-  header h1 { font-size:3rem; margin-bottom:20px; }
+  section { padding:10px; max-width:1100px; margin: 2px;}
+  .btn { display:inline-block; padding:2px ; background:#00d4b8; color:#0e0f14; border-radius:25px; font-weight:bold; transition:background .3s; }
+  .btn:hover { background:#00ffa5; padding: 2px;}
+  header { text-align:center; padding:20px; background:url('air.png') no-repeat center/cover; background-color: rgba(0,0,0,0.6); }
+  header h1 { font-size:3rem; margin-bottom:5px; }
   .components, .team { display:flex; flex-wrap:wrap; gap:40px; justify-content:center; }
   .component-card, .team-member { background:#1a1c24; padding:30px; border-radius:15px; width:280px; text-align:center; transition:transform .3s; }
   .component-card:hover, .team-member:hover { transform:translateY(-10px); }
@@ -29,7 +29,7 @@
   .video-container { display:flex; justify-content:center; margin-top:20px; }
   .video-container iframe { width:100%; max-width:800px; height:200px; border:none; border-radius:15px; }
   pre { background:#1a1c24; padding:20px; border-radius:15px; overflow-x:auto; white-space:pre-wrap; margin-top:20px; }
-  ol { margin-top:15px; padding-left:20px; }
+  ol { margin-top:10px; padding-left:10px; }
   footer { background:#13141a; padding:30px; text-align:center; }
 </style>
 </head>
@@ -153,7 +153,7 @@ Overall, the system provides a smart, connected, and reliable solution for monit
    <img src="full.JPG" alt="node system connection" style="width: 19cm;">
    <p>By using soldering techinics we solder node system on compaact bord to ensure system realiability</p>
     <br><img src="node.JPG" alt="board connection view" style="width: 19cm;">
-    <p>Node system connection with gate way system requires carefull inspection of serial connection between receive and tansmitter of both system  </p>
+    <p>Node system connection with gate way system requires carefull inspection of serial connection <br>between receive and tansmitter of both system  </p>
    <br><img src="both.jpeg" alt="Both system connection"style="width: 19cm;">
     <li>Node Programming: Writing Arduino code to read sensors, compare thresholds, control LEDs/buzzer, and send data via UART.</li>
     <h3>Nodes firmware:</h3>
@@ -288,14 +288,18 @@ void MQTT_connect() {
 
     <p> ..To verify sensor reading we have used arduino IDE serial monitor .the following screen shows the serial monitor readings for each verification stage.
     </p> <br>
-<p>i.this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
+    <p>i. by checking if gate way system can connect to internet we used serial monitor as indicated in code ,
+       once wifi is not connected the serial monitor displays dots but while  is conneected it displays wifi connected</p>
+    <img src="cant.png" alt="system  not connected to wifi" style="width: 19cm;">
+    <img src="can.png" alt="system connected to wifi" style="width: 19cm;">
+
+    <p>ii. here's what serial monitor display when wifi and adafruit are connected but gateway system is not conected to node system</p>
+    <img src="al.png" alt="" style="width: 25cm;">
+    <p>iii.this image shows how data is sent from node to Gateway.,node is represented as site A,  first SERIAL monitor shows data send and time stamp and also second SERIAL  monitor shows data received and time stamp</p>
      <br><img src="test.png" alt="" style="width: 25cm;">
-    <p>ii.</p>
-    <img src="test.png" alt="" style="width: 25cm;">
-    <p>iii.</p>
-    <img src="test.png" alt="" style="width: 25cm;">
-    <p>iv.this image shows  ,  </p>
-    <img src="test.png" alt="" style="width: 25cm;">
+    
+    <p>iv.this image shows adafruit dashboard ,  </p>
+    <img src="dash.png" alt="" style="width: 25cm;">
 
     <li>Deployment: Install nodes in target locations for continuous environmental monitoring.</li>
  <P>
